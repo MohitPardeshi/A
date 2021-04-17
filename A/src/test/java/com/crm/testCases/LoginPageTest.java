@@ -1,7 +1,9 @@
 package com.crm.testCases;
 
+import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
+import org.testng.asserts.Assertion;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
@@ -9,6 +11,7 @@ import org.testng.annotations.Test;
 
 import com.crm.base.TestBase;
 import com.crm.pages.LoginPage;
+
 
 public class LoginPageTest extends TestBase
 {
@@ -32,9 +35,17 @@ public void setUp()
 public void loginPageTitle()
 {
 String title=loginPage.validateLoginPageTitle();
+Assert.assertEquals(title,"Swag Labs");
 }
 
-@Test
+@Test(priority = 2)
+public void LoginIncorrectDetails()
+{
+	loginPage.login(prop.getProperty("userName1"),prop.getProperty("password"));
+}
+
+
+@Test(priority = 3)
 public void Login()
 {
 	loginPage.login(prop.getProperty("userName"),prop.getProperty("password"));
@@ -43,6 +54,6 @@ public void Login()
 @AfterMethod
 public void tearDown()
 {
-//driver.close();	
+driver.close();	
 }
 }

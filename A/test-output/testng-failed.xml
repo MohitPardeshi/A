@@ -5,9 +5,9 @@
     <classes>
       <class name="com.crm.testCases.LoginPageTest">
         <methods>
+          <include name="loginPageTitle"/>
           <include name="setUp"/>
           <include name="tearDown"/>
-          <include name="Login"/>
         </methods>
       </class> <!-- com.crm.testCases.LoginPageTest -->
     </classes>
