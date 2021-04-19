@@ -12,13 +12,13 @@ public class LoginPage extends TestBase
 	
 	//Page Factory
 	
-	@FindBy(id="user-name")
+	@FindBy(name="username")
 	WebElement userName;
 	
-	@FindBy(id="password")
+	@FindBy(name="password")
 	WebElement password;
 	
-	@FindBy(id="login-button")
+	@FindBy(xpath="//input[@type='submit']")
 	WebElement loginBtn;
 
 	public LoginPage()
@@ -32,11 +32,11 @@ public class LoginPage extends TestBase
 		return driver.getTitle();
 	}
 	
-	public void login(String us,String pwd)
+	public HomePage login(String us,String pwd)
 	{
 		userName.sendKeys(us);
-		password.sendKeys(pwd);
+		password.sendKeys(pwd);	
 		loginBtn.click();
-		
+		return new HomePage();
 	}
 }

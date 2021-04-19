@@ -35,7 +35,7 @@ public void setUp()
 public void loginPageTitle()
 {
 String title=loginPage.validateLoginPageTitle();
-Assert.assertEquals(title,"Swag Labs");
+Assert.assertEquals(title,"CRMPRO - CRM software for customer relationship management, sales, and support.");
 }
 
 @Test(priority = 2)
@@ -54,6 +54,6 @@ public void Login()
 @AfterMethod
 public void tearDown()
 {
-driver.close();	
+//driver.close();	
 }
 }
