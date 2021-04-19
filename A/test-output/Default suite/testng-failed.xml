@@ -5,10 +5,9 @@
     <classes>
       <class name="com.crm.testCases.HomePageTest">
         <methods>
-          <include name="userNameLabelDisplayedTest"/>
           <include name="tearDown"/>
+          <include name="helpButtonTest"/>
           <include name="setUp"/>
-          <include name="logoutTest"/>
         </methods>
       </class> <!-- com.crm.testCases.HomePageTest -->
     </classes>

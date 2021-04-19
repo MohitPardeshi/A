@@ -32,21 +32,21 @@ public void setUp()
 }
 
 @Test(priority = 1)
-public void loginPageTitle()
+public void loginPageTitleTest()
 {
 String title=loginPage.validateLoginPageTitle();
 Assert.assertEquals(title,"CRMPRO - CRM software for customer relationship management, sales, and support.");
 }
 
 @Test(priority = 2)
-public void LoginIncorrectDetails()
+public void loginIncorrectDetailsTest()
 {
 	loginPage.login(prop.getProperty("userName1"),prop.getProperty("password"));
 }
 
 
 @Test(priority = 3)
-public void Login()
+public void successfulLoginTest()
 {
 	loginPage.login(prop.getProperty("userName"),prop.getProperty("password"));
 }
@@ -54,6 +54,6 @@ public void Login()
 @AfterMethod
 public void tearDown()
 {
-//driver.close();	
+driver.close();	
 }
 }

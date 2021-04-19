@@ -9,7 +9,7 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-import com.crm.testData.TestUtil;
+import com.crm.utill.TestUtil;
 
 public class TestBase 
 {

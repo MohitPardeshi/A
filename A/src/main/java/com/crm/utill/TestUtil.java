@@ -1,4 +1,4 @@
-package com.crm.testData;
+package com.crm.utill;
 
 import java.sql.Driver;
 
@@ -13,5 +13,14 @@ public class TestUtil extends TestBase
 	public void switchWindowFrame(String frameName)
 	{
 		driver.switchTo().frame(frameName);
+	}
+	
+	public void switchWindow()
+	{
+		for(String handles : driver.getWindowHandles())
+		{
+			System.out.println(handles);
+			driver.switchTo().window(handles);
+		}
 	}
 }

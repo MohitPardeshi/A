@@ -1,5 +1,7 @@
 package com.crm.testCases;
 
+import java.util.Set;
+
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -7,7 +9,7 @@ import org.testng.annotations.Test;
 
 import com.crm.base.TestBase;
 import com.crm.pages.LoginPage;
-import com.crm.testData.TestUtil;
+import com.crm.utill.TestUtil;
 import com.crm.pages.*;
 
 public class HomePageTest extends TestBase {
@@ -30,34 +32,42 @@ public class HomePageTest extends TestBase {
 	}
 	
 	
-	@Test(priority = 1) 
-	public void validateHomeTitleTest()
-	{ 
-		String title=homePage.getHomePageTitle();
-		Assert.assertEquals(title, "CRMPRO");
-	}
+	
+	  @Test(priority = 1) public void validateHomeTitleTest() { String
+	  title=homePage.getHomePageTitle(); Assert.assertEquals(title, "CRMPRO"); }
+	  
+	  
+	  @Test(priority = 2) public void userNameLabelDisplayedTest() {
+	  testUtil.switchWindowFrame("mainpanel");
+	  Assert.assertTrue(homePage.getUserNameLabel()); }
+	  
+	  @Test(priority = 3) public void logoutTest() {
+	  testUtil.switchWindowFrame("mainpanel"); loginPage=homePage.logoutClick();
+	  Assert.
+	  assertEquals("Free CRM - CRM software for customer relationship management, sales, and support."
+	  ,driver.getTitle(),"This case failed due to title is not same"); }
 	 
 	
-	@Test(priority = 2)
-	public void userNameLabelDisplayedTest()
+	@Test(priority=4)
+	public void setupButtonTest()
 	{
 		testUtil.switchWindowFrame("mainpanel");
-		Assert.assertTrue(homePage.getUserNameLabel());
+		homePage.setupClick();
+		Assert.assertTrue(homePage.setupPageDisplayed());
 	}
 	
-	@Test(priority = 3)
-	public void logoutTest()
+	@Test(priority=5)
+	public void helpButtonTest()
 	{
 		testUtil.switchWindowFrame("mainpanel");
-		loginPage=homePage.logoutClick();
-		Assert.assertEquals("CRMPRO - CRM software for customer relationship management, sales, and support.",driver.getTitle(),"This case failed due to title is not same");
+		homePage.helpClick();
+		testUtil.switchWindow();
+		Assert.assertEquals("help.crmpro.com",driver.getTitle(),"Incorrect tab with incorrect title is opened");
 	}
-	
-	
 	@AfterMethod
 	public void tearDown()
 	{
-		//driver.close();
+		driver.quit();
 	}
 	
 
