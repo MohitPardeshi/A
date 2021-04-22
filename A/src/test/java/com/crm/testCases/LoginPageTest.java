@@ -54,6 +54,6 @@ public void successfulLoginTest()
 @AfterMethod
 public void tearDown()
 {
-driver.close();	
+driver.quit();	
 }
 }

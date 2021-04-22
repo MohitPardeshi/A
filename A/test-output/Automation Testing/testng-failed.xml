@@ -6,8 +6,9 @@
       <class name="com.crm.testCases.HomePageTest">
         <methods>
           <include name="tearDown"/>
+          <include name="setupButtonTest"/>
+          <include name="helpButtonTest"/>
           <include name="setUp"/>
-          <include name="logoutTest"/>
         </methods>
       </class> <!-- com.crm.testCases.HomePageTest -->
     </classes>

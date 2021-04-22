@@ -10,17 +10,14 @@ import com.crm.base.TestBase;
 
 public class HomePage extends TestBase {
 	
-	
-	
+	//Label
 	@FindBy(xpath="//td[contains(text(),'User: group automation')]")
 	WebElement userNameLabel;
 	
 	@FindBy(xpath="//td[contains(text(),'User:automation')]")
 	WebElement userNameLabel1;
 	
-	@FindBy(xpath="//a[contains(text(),'Home')]")
-	WebElement homeButton;
-	
+	//Buttons
 	@FindBy(xpath="//a[contains(text(),'Logout')]")
 	WebElement logoutButton;
 	
@@ -30,6 +27,13 @@ public class HomePage extends TestBase {
 	@FindBy(xpath="//a[contains(text(),'Help')]")
 	WebElement helpButton;
 	
+	//Open Button Page
+	@FindBy(xpath="//td[contains(text(),'Global Account Administration')]")
+	WebElement setupPageOpen;
+	
+	// Top Menus
+	@FindBy(xpath="//a[contains(text(),'Home')]")
+	WebElement homeButton;
 	
 	@FindBy(xpath="//a[contains(text(),'Calendar')]")
 	WebElement calendar;
@@ -43,8 +47,51 @@ public class HomePage extends TestBase {
 	@FindBy(xpath="//a[contains(text(),'Deals')]")
 	WebElement deals;
 	
-	@FindBy(xpath="//td[contains(text(),'Global Account Administration')]")
-	WebElement setupPageOpen;
+	@FindBy(xpath="//a[contains(text(),'Tasks')]")
+	WebElement tasks;
+	
+	@FindBy(xpath="//a[contains(text(),'Cases')]")
+	WebElement cases;
+	
+	@FindBy(xpath="//a[contains(text(),'Call')]")
+	WebElement call;
+	
+	@FindBy(xpath="//a[contains(text(),'Email')]")
+	WebElement email;
+	
+	@FindBy(xpath="//a[contains(text(),'Text/SMS')]")
+	WebElement textsms;
+	
+	@FindBy(xpath="//a[contains(text(),'Print')]")
+	WebElement print;
+	
+	@FindBy(xpath="//a[contains(text(),'Campaigns')]")
+	WebElement campaigns;
+	
+	@FindBy(xpath="//a[contains(text(),'Docs')]")
+	WebElement docs;
+	
+	@FindBy(xpath="//a[contains(text(),'Forms')]")
+	WebElement forms;
+	
+	@FindBy(xpath="//a[contains(text(),'Reports')]")
+	WebElement reports;
+	
+	//MenuPageOpen
+	
+	
+	public void calendarPageOpen()
+	{
+		
+	}
+	
+	
+	
+	@FindBy(xpath="//a[contains(text(),'Audit Trail')]")
+	WebElement auditTrail;
+	
+	@FindBy(xpath="//td[contains(text(),'')]")
+	WebElement auditTrailOpen;
 	
 	//Initialize the page element
 	public HomePage()
@@ -86,4 +133,14 @@ public class HomePage extends TestBase {
 		return setupPageOpen.isDisplayed();
 	}
 	
+	public AuditTrailPage auditTrailClick()
+	{
+		auditTrail.click();
+		return new AuditTrailPage();
+	}
+	
+	public boolean auditTrailPageDisplayed()
+	{
+		return auditTrailOpen.isDisplayed();
+	}
 }

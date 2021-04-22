@@ -2,20 +2,20 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2021-04-19T22:56:38 IST" name="Default suite" finished-at="2021-04-19T22:59:12 IST" duration-ms="153209">
+  <suite started-at="2021-04-22T11:35:43 IST" name="Default suite" finished-at="2021-04-22T11:36:17 IST" duration-ms="33461">
     <groups>
     </groups>
-    <test started-at="2021-04-19T22:56:38 IST" name="Default test" finished-at="2021-04-19T22:59:12 IST" duration-ms="153209">
+    <test started-at="2021-04-22T11:35:43 IST" name="Default test" finished-at="2021-04-22T11:36:17 IST" duration-ms="33461">
       <class name="com.crm.testCases.HomePageTest">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.crm.testCases.HomePageTest@2f8dad04]" started-at="2021-04-19T22:56:38 IST" name="setUp" finished-at="2021-04-19T22:59:10 IST" duration-ms="151865" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.crm.testCases.HomePageTest@2f8dad04]" started-at="2021-04-22T11:35:44 IST" name="setUp" finished-at="2021-04-22T11:36:15 IST" duration-ms="31990" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="helpButtonTest()[pri:5, instance:com.crm.testCases.HomePageTest@2f8dad04]" started-at="2021-04-19T22:59:10 IST" name="helpButtonTest" finished-at="2021-04-19T22:59:12 IST" duration-ms="1256" status="PASS">
+        <test-method signature="auditTrailPage()[pri:6, instance:com.crm.testCases.HomePageTest@2f8dad04]" started-at="2021-04-22T11:36:16 IST" name="auditTrailPage" finished-at="2021-04-22T11:36:17 IST" duration-ms="1307" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- helpButtonTest -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.crm.testCases.HomePageTest@2f8dad04]" started-at="2021-04-19T22:59:12 IST" name="tearDown" finished-at="2021-04-19T22:59:12 IST" duration-ms="34" status="PASS">
+        </test-method> <!-- auditTrailPage -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.crm.testCases.HomePageTest@2f8dad04]" started-at="2021-04-22T11:36:17 IST" name="tearDown" finished-at="2021-04-22T11:36:17 IST" duration-ms="107" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
