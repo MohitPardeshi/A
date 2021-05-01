@@ -11,18 +11,21 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import com.crm.utill.TestUtil;
 
-public class TestBase 
-{
+public class TestBase {
 	public static WebDriver driver;
-	public static Properties prop;
-	
-	public TestBase() 
-	{
-		prop= new Properties();
-		FileInputStream ip;
+	public static Properties prop,propertyPageTitles;
+
+	public static void initialization() {
+
+		prop = new Properties();
+		propertyPageTitles=new Properties();
+		FileInputStream ip,ip1;
 		try {
-			ip = new FileInputStream("/Users/mohitrajupardeshi/eclipse-workspace/A/src/main/java/com/crm/config/config.properties");
+			ip = new FileInputStream(
+					"/Users/mohitrajupardeshi/eclipse-workspace/A/src/main/java/com/crm/config/config.properties");
+			ip1=new FileInputStream("/Users/mohitrajupardeshi/eclipse-workspace/A/src/main/java/com/crm/config/pageTitle.properties");
 			prop.load(ip);
+			propertyPageTitles.load(ip1);
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -30,22 +33,18 @@ public class TestBase
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
-	}
 
+		String browserName = prop.getProperty("browser");
+		if (browserName.equals("chrome")) {
+			System.setProperty("webdriver.chrome.driver",
+					"/Users/mohitrajupardeshi/Desktop/Mohit/Selenium/chromedriver");
+			driver = new ChromeDriver();
+		}
 
-public static void initialization() {
-	String browserName= prop.getProperty("browser");
-	if (browserName.equals("chrome"))
-	{
-		System.setProperty("webdriver.chrome.driver","/Users/mohitrajupardeshi/Desktop/Mohit/Selenium/chromedriver");
-		driver=new ChromeDriver();
+		driver.manage().window().maximize();
+		driver.manage().deleteAllCookies();
+		driver.manage().timeouts().implicitlyWait(TestUtil.IMPLICIT_WAIT, TimeUnit.SECONDS);
+		driver.get(prop.getProperty("url"));
 	}
-	
-	driver.manage().window().maximize();
-	driver.manage().deleteAllCookies();
-	driver.manage().timeouts().implicitlyWait(TestUtil.IMPLICIT_WAIT,TimeUnit.SECONDS);
-	driver.get(prop.getProperty("url"));
-}
 
 }

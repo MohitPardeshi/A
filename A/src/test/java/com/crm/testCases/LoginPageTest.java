@@ -11,49 +11,61 @@ import org.testng.annotations.Test;
 
 import com.crm.base.TestBase;
 import com.crm.pages.LoginPage;
+import com.crm.utill.TestUtil;
 
-
-public class LoginPageTest extends TestBase
-{
+public class LoginPageTest extends TestBase {
 
 	LoginPage loginPage;
+	TestUtil testUtil;
 
-public LoginPageTest() {
-		super();
-		
+	@BeforeMethod
+	public void setUp() {
+		initialization();
+		loginPage = new LoginPage();
+		testUtil=new TestUtil();
+	}
+	/*
+	@Test(priority = 1)
+	public void loginPageTitleTest() {
+		Assert.assertEquals(testUtil.getWindowTitle(),propertyPageTitles.getProperty("LoginPage"));
+	}
+	
+	@Test(priority = 2)
+	public void loginIncorrectDetailsTest() {
+		loginPage.login(prop.getProperty("userName1"), prop.getProperty("password"));
 	}
 
-
-@BeforeMethod
-public void setUp()
-{
-	initialization();
-	loginPage=new LoginPage();
-}
-
-@Test(priority = 1)
-public void loginPageTitleTest()
-{
-String title=loginPage.validateLoginPageTitle();
-Assert.assertEquals(title,"CRMPRO - CRM software for customer relationship management, sales, and support.");
-}
-
-@Test(priority = 2)
-public void loginIncorrectDetailsTest()
-{
-	loginPage.login(prop.getProperty("userName1"),prop.getProperty("password"));
-}
-
-
-@Test(priority = 3)
-public void successfulLoginTest()
-{
-	loginPage.login(prop.getProperty("userName"),prop.getProperty("password"));
-}
-
-@AfterMethod
-public void tearDown()
-{
-driver.quit();	
-}
+	@Test(priority = 3)
+	public void successfulLoginTest() {
+		loginPage.login(prop.getProperty("userName"), prop.getProperty("password"));
+	}
+	
+	@Test(priority=4)
+	public void homeButton() {
+		loginPage.clickHome();
+		Assert.assertEquals(testUtil.getWindowTitle(),propertyPageTitles.getProperty("HomePage"));
+	}
+	*/
+	
+	@Test(priority=5)
+	public void signUpButton()
+	{
+		loginPage.clickSignUp();
+		testUtil.switchWindow();
+		Assert.assertEquals(testUtil.getWindowTitle(),propertyPageTitles.getProperty("SignUpPage"));
+		
+	}
+	
+	@Test(priority = 6)
+	public void pricingButton()
+	{
+		loginPage.clickPricing();
+		testUtil.switchWindow();
+		Assert.assertEquals(testUtil.getWindowTitle(),propertyPageTitles.getProperty("PricingPage"));
+	}
+	
+	@AfterMethod
+	public void tearDown() {
+		driver.quit();
+	}
 }

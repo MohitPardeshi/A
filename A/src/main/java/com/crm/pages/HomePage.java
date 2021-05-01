@@ -80,6 +80,7 @@ public class HomePage extends TestBase {
 	//MenuPageOpen
 	
 	
+	
 	public void calendarPageOpen()
 	{
 		

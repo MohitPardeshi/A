@@ -23,4 +23,9 @@ public class TestUtil extends TestBase
 			driver.switchTo().window(handles);
 		}
 	}
+	
+	public String getWindowTitle()
+	{
+		return driver.getTitle();
+	}
 }

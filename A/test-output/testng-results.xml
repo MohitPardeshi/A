@@ -1,25 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2021-04-22T11:35:43 IST" name="Default suite" finished-at="2021-04-22T11:36:17 IST" duration-ms="33461">
+  <suite started-at="2021-05-01T19:26:59 IST" name="Default suite" finished-at="2021-05-01T19:27:26 IST" duration-ms="26316">
     <groups>
     </groups>
-    <test started-at="2021-04-22T11:35:43 IST" name="Default test" finished-at="2021-04-22T11:36:17 IST" duration-ms="33461">
-      <class name="com.crm.testCases.HomePageTest">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.crm.testCases.HomePageTest@2f8dad04]" started-at="2021-04-22T11:35:44 IST" name="setUp" finished-at="2021-04-22T11:36:15 IST" duration-ms="31990" status="PASS">
+    <test started-at="2021-05-01T19:26:59 IST" name="Default test" finished-at="2021-05-01T19:27:26 IST" duration-ms="26316">
+      <class name="com.crm.testCases.LoginPageTest">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.crm.testCases.LoginPageTest@29e495ff]" started-at="2021-05-01T19:26:59 IST" name="setUp" finished-at="2021-05-01T19:27:09 IST" duration-ms="9739" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="auditTrailPage()[pri:6, instance:com.crm.testCases.HomePageTest@2f8dad04]" started-at="2021-04-22T11:36:16 IST" name="auditTrailPage" finished-at="2021-04-22T11:36:17 IST" duration-ms="1307" status="PASS">
+        <test-method signature="signUpButton()[pri:5, instance:com.crm.testCases.LoginPageTest@29e495ff]" started-at="2021-05-01T19:27:09 IST" name="signUpButton" finished-at="2021-05-01T19:27:11 IST" duration-ms="2385" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- auditTrailPage -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.crm.testCases.HomePageTest@2f8dad04]" started-at="2021-04-22T11:36:17 IST" name="tearDown" finished-at="2021-04-22T11:36:17 IST" duration-ms="107" status="PASS">
+        </test-method> <!-- signUpButton -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.crm.testCases.LoginPageTest@29e495ff]" started-at="2021-05-01T19:27:11 IST" name="tearDown" finished-at="2021-05-01T19:27:12 IST" duration-ms="85" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- com.crm.testCases.HomePageTest -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.crm.testCases.LoginPageTest@29e495ff]" started-at="2021-05-01T19:27:12 IST" name="setUp" finished-at="2021-05-01T19:27:20 IST" duration-ms="8239" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="pricingButton()[pri:6, instance:com.crm.testCases.LoginPageTest@29e495ff]" started-at="2021-05-01T19:27:20 IST" name="pricingButton" finished-at="2021-05-01T19:27:26 IST" duration-ms="5730" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- pricingButton -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.crm.testCases.LoginPageTest@29e495ff]" started-at="2021-05-01T19:27:26 IST" name="tearDown" finished-at="2021-05-01T19:27:26 IST" duration-ms="87" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.crm.testCases.LoginPageTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
