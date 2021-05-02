@@ -8,24 +8,26 @@ import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 
 import com.crm.utill.TestUtil;
 
 public class TestBase {
 	public static WebDriver driver;
-	public static Properties prop,propertyPageTitles;
+	public static Properties prop, propertyPageTitles;
 
 	public static void initialization() {
 
 		prop = new Properties();
-		propertyPageTitles=new Properties();
-		FileInputStream ip,ip1;
+		propertyPageTitles = new Properties();
+		FileInputStream inputStream, inputStream1;
 		try {
-			ip = new FileInputStream(
+			inputStream = new FileInputStream(
 					"/Users/mohitrajupardeshi/eclipse-workspace/A/src/main/java/com/crm/config/config.properties");
-			ip1=new FileInputStream("/Users/mohitrajupardeshi/eclipse-workspace/A/src/main/java/com/crm/config/pageTitle.properties");
-			prop.load(ip);
-			propertyPageTitles.load(ip1);
+			inputStream1 = new FileInputStream(
+					"/Users/mohitrajupardeshi/eclipse-workspace/A/src/main/java/com/crm/config/pageTitle.properties");
+			prop.load(inputStream);
+			propertyPageTitles.load(inputStream1);
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -38,7 +40,9 @@ public class TestBase {
 		if (browserName.equals("chrome")) {
 			System.setProperty("webdriver.chrome.driver",
 					"/Users/mohitrajupardeshi/Desktop/Mohit/Selenium/chromedriver");
-			driver = new ChromeDriver();
+			ChromeOptions option = new ChromeOptions();
+			// option.addArguments("headless");
+			driver = new ChromeDriver(option);
 		}
 
 		driver.manage().window().maximize();

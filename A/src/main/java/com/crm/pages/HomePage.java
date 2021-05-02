@@ -3,145 +3,147 @@ package com.crm.pages;
 import java.util.Set;
 
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import com.crm.base.TestBase;
 
 public class HomePage extends TestBase {
-	
-	//Label
-	@FindBy(xpath="//td[contains(text(),'User: group automation')]")
+
+	Actions a = new Actions(driver);
+
+	// Label
+	@FindBy(xpath = "//td[contains(text(),'User: group automation')]")
 	WebElement userNameLabel;
-	
-	@FindBy(xpath="//td[contains(text(),'User:automation')]")
+
+	@FindBy(xpath = "//td[contains(text(),'User:automation')]")
 	WebElement userNameLabel1;
-	
-	//Buttons
-	@FindBy(xpath="//a[contains(text(),'Logout')]")
+
+	// Buttons
+	@FindBy(xpath = "//a[contains(text(),'Logout')]")
 	WebElement logoutButton;
-	
-	@FindBy(xpath="//a[contains(text(),'Setup')]")
+
+	@FindBy(xpath = "//a[contains(text(),'Setup')]")
 	WebElement setupButton;
-	
-	@FindBy(xpath="//a[contains(text(),'Help')]")
+
+	@FindBy(xpath = "//a[contains(text(),'Help')]")
 	WebElement helpButton;
-	
-	//Open Button Page
-	@FindBy(xpath="//td[contains(text(),'Global Account Administration')]")
+
+	// Open Button Page
+	@FindBy(xpath = "//td[contains(text(),'Global Account Administration')]")
 	WebElement setupPageOpen;
-	
+
 	// Top Menus
-	@FindBy(xpath="//a[contains(text(),'Home')]")
+	@FindBy(xpath = "//a[contains(text(),'Home')]")
 	WebElement homeButton;
-	
-	@FindBy(xpath="//a[contains(text(),'Calendar')]")
+
+	@FindBy(xpath = "//a[contains(text(),'Calendar')]")
 	WebElement calendar;
-	
-	@FindBy(xpath="//a[contains(text(),'Companies')]")
+
+	@FindBy(xpath = "//a[contains(text(),'Companies')]")
 	WebElement companies;
-	
-	@FindBy(xpath="//a[contains(text(),'Contacts')]")
+
+	@FindBy(xpath = "//a[contains(text(),'Contacts')]")
 	WebElement contacts;
-	
-	@FindBy(xpath="//a[contains(text(),'Deals')]")
+
+	@FindBy(xpath = "//a[contains(text(),'Deals')]")
 	WebElement deals;
-	
-	@FindBy(xpath="//a[contains(text(),'Tasks')]")
+
+	@FindBy(xpath = "//a[contains(text(),'Tasks')]")
 	WebElement tasks;
-	
-	@FindBy(xpath="//a[contains(text(),'Cases')]")
+
+	@FindBy(xpath = "//a[contains(text(),'Cases')]")
 	WebElement cases;
-	
-	@FindBy(xpath="//a[contains(text(),'Call')]")
+
+	@FindBy(xpath = "//a[contains(text(),'Call')]")
 	WebElement call;
-	
-	@FindBy(xpath="//a[contains(text(),'Email')]")
+
+	@FindBy(xpath = "//a[contains(text(),'Email')]")
 	WebElement email;
-	
-	@FindBy(xpath="//a[contains(text(),'Text/SMS')]")
+
+	@FindBy(xpath = "//a[contains(text(),'Text/SMS')]")
 	WebElement textsms;
-	
-	@FindBy(xpath="//a[contains(text(),'Print')]")
+
+	@FindBy(xpath = "//a[contains(text(),'Print')]")
 	WebElement print;
-	
-	@FindBy(xpath="//a[contains(text(),'Campaigns')]")
+
+	@FindBy(xpath = "//a[contains(text(),'Campaigns')]")
 	WebElement campaigns;
-	
-	@FindBy(xpath="//a[contains(text(),'Docs')]")
+
+	@FindBy(xpath = "//a[contains(text(),'Docs')]")
 	WebElement docs;
-	
-	@FindBy(xpath="//a[contains(text(),'Forms')]")
+
+	@FindBy(xpath = "//a[contains(text(),'Forms')]")
 	WebElement forms;
-	
-	@FindBy(xpath="//a[contains(text(),'Reports')]")
+
+	@FindBy(xpath = "//a[contains(text(),'Reports')]")
 	WebElement reports;
-	
-	//MenuPageOpen
-	
-	
-	
-	public void calendarPageOpen()
-	{
-		
+
+	// MenuPageOpen
+
+	public void calendarPageOpen() {
+
 	}
-	
-	
-	
-	@FindBy(xpath="//a[contains(text(),'Audit Trail')]")
+
+	// Mouse over
+	public void mouseOver(String menuName) {
+		switch (menuName) {
+		case "Calendar":
+			a.moveToElement(calendar).build().perform();
+			break;
+		case "Companies":
+			a.moveToElement(companies).build().perform();
+			break;
+		case "" :
+			break;
+		}
+	}
+
+	@FindBy(xpath = "//a[contains(text(),'Audit Trail')]")
 	WebElement auditTrail;
-	
-	@FindBy(xpath="//td[contains(text(),'')]")
+
+	@FindBy(xpath = "//td[contains(text(),'')]")
 	WebElement auditTrailOpen;
-	
-	//Initialize the page element
-	public HomePage()
-	{
-		PageFactory.initElements(driver,this);
+
+	// Initialize the page element
+	public HomePage() {
+		PageFactory.initElements(driver, this);
 	}
-	
-	
-	public String getHomePageTitle()
-	{
+
+	public String getHomePageTitle() {
 		return driver.getTitle();
 	}
-	
-	public Boolean getUserNameLabel()
-	{
+
+	public Boolean getUserNameLabel() {
 		return userNameLabel.isDisplayed();
 	}
-	
-	public LoginPage logoutClick()
-	{
+
+	public LoginPage logoutClick() {
 		logoutButton.click();
 		return new LoginPage();
 	}
-	
-	public SetupPage setupClick()
-	{
+
+	public SetupPage setupClick() {
 		setupButton.click();
 		return new SetupPage();
 	}
-	
-	public Set<String> helpClick()
-	{
+
+	public Set<String> helpClick() {
 		helpButton.click();
 		return driver.getWindowHandles();
 	}
-	
-	public boolean setupPageDisplayed()
-	{
+
+	public boolean setupPageDisplayed() {
 		return setupPageOpen.isDisplayed();
 	}
-	
-	public AuditTrailPage auditTrailClick()
-	{
+
+	public AuditTrailPage auditTrailClick() {
 		auditTrail.click();
 		return new AuditTrailPage();
 	}
-	
-	public boolean auditTrailPageDisplayed()
-	{
+
+	public boolean auditTrailPageDisplayed() {
 		return auditTrailOpen.isDisplayed();
 	}
 }

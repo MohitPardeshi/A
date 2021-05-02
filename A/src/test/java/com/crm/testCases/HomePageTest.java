@@ -13,23 +13,21 @@ import com.crm.utill.TestUtil;
 import com.crm.pages.*;
 
 public class HomePageTest extends TestBase {
-	
+
 	LoginPage loginPage;
 	HomePage homePage;
 	TestUtil testUtil;
-	
+
 	@BeforeMethod
-	public void setUp()
-	{
+	public void setUp() {
 		initialization();
-		loginPage=new LoginPage();
-		testUtil=new TestUtil();
-		homePage=loginPage.login(prop.getProperty("userName"),prop.getProperty("password"));
+		loginPage = new LoginPage();
+		testUtil = new TestUtil();
+		homePage = loginPage.login(prop.getProperty("userName"), prop.getProperty("password"));
 	}
-	
-	
-	
+
 	/*
+	 * 
 	 * @Test(priority = 1) public void validateHomeTitleTest() { String
 	 * title=homePage.getHomePageTitle(); Assert.assertEquals(title, "CRMPRO"); }
 	 * 
@@ -54,21 +52,22 @@ public class HomePageTest extends TestBase {
 	 * testUtil.switchWindow();
 	 * Assert.assertEquals("help.crmpro.com",driver.getTitle()
 	 * ,"Incorrect tab with incorrect title is opened"); }
+	 * 
+	 * @Test(priority=6) public void auditTrailPage() {
+	 * testUtil.switchWindowFrame("mainpanel"); homePage.auditTrailClick();
+	 * Assert.assertTrue(homePage.auditTrailPageDisplayed()); }
 	 */
-	@Test(priority=6)
-	public void auditTrailPage()
+	
+	@Test(priority=7)
+	public void mouseOverCalendar()
 	{
 		testUtil.switchWindowFrame("mainpanel");
-		homePage.auditTrailClick();
-		Assert.assertTrue(homePage.auditTrailPageDisplayed());
+		homePage.mouseOver("Calendar");
 	}
-	
-	
+
 	@AfterMethod
-	public void tearDown()
-	{
-		driver.close();
+	public void tearDown() {
+		//driver.close();
 	}
-	
 
 }

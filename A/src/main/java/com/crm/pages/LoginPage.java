@@ -1,7 +1,7 @@
 package com.crm.pages;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
@@ -27,7 +27,7 @@ public class LoginPage extends TestBase {
 	@FindBy(xpath = "//a[text()='Customers']")
 	WebElement customers;
 
-	@FindBy(xpath = "//a[text()='Contact'")
+	@FindBy(xpath = "//a[text()='Contact']")
 	WebElement contact;
 
 	@FindBy(name = "username")
@@ -40,7 +40,7 @@ public class LoginPage extends TestBase {
 	WebElement loginBtn;
 
 	// Initializing the web elements
-	
+
 	public LoginPage() {
 		PageFactory.initElements(driver, this);
 	}
@@ -51,27 +51,41 @@ public class LoginPage extends TestBase {
 		home.click();
 		return new LoginPage();
 	}
-	
-	public SignUpPage clickSignUp()
-	{
+
+	public SignUpPage clickSignUp() {
 		signUp.click();
 		return new SignUpPage();
 	}
-	
-	public PricingPage clickPricing()
-	{
+
+	public PricingPage clickPricing() {
 		pricing.click();
 		return new PricingPage();
 	}
-
-	public String validateLoginPageTitle() {
-		return driver.getTitle();
+	
+	public FeaturesPage clickFeatures()
+	{
+		features.click();
+		return new FeaturesPage();
 	}
-
+	
+	public CustomersPage clickCustomers()
+	{
+		customers.click();
+		return new CustomersPage();
+	}
+	
+	public ContactPage clickContact()
+	{
+		contact.click();
+		return new ContactPage();
+	}
+	
 	public HomePage login(String us, String pwd) {
 		userName.sendKeys(us);
 		password.sendKeys(pwd);
 		loginBtn.click();
 		return new HomePage();
 	}
+	
+
 }

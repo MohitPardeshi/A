@@ -1,7 +1,5 @@
 package com.crm.utill;
 
-import java.sql.Driver;
-
 import com.crm.base.TestBase;
 
 public class TestUtil extends TestBase
