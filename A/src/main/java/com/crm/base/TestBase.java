@@ -41,8 +41,10 @@ public class TestBase {
 			System.setProperty("webdriver.chrome.driver",
 					"/Users/mohitrajupardeshi/Desktop/Mohit/Selenium/chromedriver");
 			ChromeOptions option = new ChromeOptions();
-			// option.addArguments("headless");
+			 option.addArguments("headless");
+	
 			driver = new ChromeDriver(option);
+			
 		}
 
 		driver.manage().window().maximize();

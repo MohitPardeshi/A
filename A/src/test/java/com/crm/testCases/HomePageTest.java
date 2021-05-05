@@ -20,6 +20,7 @@ public class HomePageTest extends TestBase {
 
 	@BeforeMethod
 	public void setUp() {
+
 		initialization();
 		loginPage = new LoginPage();
 		testUtil = new TestUtil();
@@ -57,17 +58,16 @@ public class HomePageTest extends TestBase {
 	 * testUtil.switchWindowFrame("mainpanel"); homePage.auditTrailClick();
 	 * Assert.assertTrue(homePage.auditTrailPageDisplayed()); }
 	 */
-	
-	@Test(priority=7)
-	public void mouseOverCalendar()
-	{
+
+	@Test(priority = 7)
+	public void mouseOverCalendar() {
 		testUtil.switchWindowFrame("mainpanel");
 		homePage.mouseOver("Calendar");
 	}
 
 	@AfterMethod
 	public void tearDown() {
-		//driver.close();
+		// driver.close();
 	}
 
 }
